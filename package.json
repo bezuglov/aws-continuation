@@ -1,6 +1,6 @@
 {
     "name": "aws-continuation",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "AWS SDK v3 Clients with automatic continuation for TypeScript/JavaScript",
     "repository": {
         "url": "https://github.com/bezuglov/aws-continuation"
@@ -32,7 +32,9 @@
         "prebuild": "rm -rf dist",
         "build": "npm run build:esm && npm run build:cjs",
         "build:esm": "tsc -p tsconfig.json",
+        "postbuild:esm": "node ./scripts/patch-package-module.js module ./dist/esm/package.json",
         "build:cjs": "tsc -p tsconfig.cjs.json",
+        "postbuild:cjs": "node ./scripts/patch-package-module.js commonjs ./dist/cjs/package.json",
         "pack-check": "npm pack --dry-run",
         "publish:full": "npm run build && npm publish --access public"
     },

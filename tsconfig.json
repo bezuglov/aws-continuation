@@ -13,17 +13,3 @@
     },
     "include": ["src"]
 }
-//{
-//    "extends": "@tsconfig/node16/tsconfig.json",
-//    "compilerOptions": {
-//        "downlevelIteration": true,
-//        "importHelpers": true,
-//        "incremental": true,
-//        "removeComments": true,
-//        "resolveJsonModule": true,
-//        "rootDir": "src",
-//        "useUnknownInCatchVariables": false
-//    },
-//    "include": ["src/"],
-//    "exclude": ["test/"]
-//}
