@@ -1,0 +1,57 @@
+{
+    "name": "aws-continuation",
+    "version": "0.0.3",
+    "description": "AWS SDK v3 Clients with automatic continuation for TypeScript/JavaScript",
+    "repository": {
+        "url": "https://github.com/bezuglov/aws-continuation"
+    },
+    "homepage": "https://github.com/bezuglov/aws-continuation",
+    "license": "MIT",
+    "author": {
+        "name": "Oleg Bezuglov",
+        "email": "bezuglov@gmail.com"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js",
+            "types": "./dist/types/index.d.ts"
+        }
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "prebuild": "rm -rf dist",
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p tsconfig.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "pack-check": "npm pack --dry-run",
+        "publish:full": "npm run build && npm publish --access public"
+    },
+    "dependencies": {
+        "@aws-sdk/client-cloudwatch-logs": "^3.651.1",
+        "@aws-sdk/client-s3": "^3.650.0",
+        "@smithy/types": "^3.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.3",
+        "typescript": "^5.7.3"
+    },
+    "sideEffects": false,
+    "keywords": [
+        "aws",
+        "aws-sdk",
+        "typescript",
+        "ts",
+        "continuation",
+        "command"
+    ]
+}

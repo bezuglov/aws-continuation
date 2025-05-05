@@ -1,0 +1,13 @@
+.idea
+.vscode
+.DS_Store
+*.log
+*.tsbuildinfo
+*.tgz
+
+package-lock.json
+node_modules/
+
+/dist*
+/coverage
+/docs
